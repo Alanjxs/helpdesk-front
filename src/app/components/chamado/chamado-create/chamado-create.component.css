@@ -1,8 +1,8 @@
 .container {
-    width: 45%;
+    width: 35rem;
     margin: auto auto 3rem auto;
     padding: 1rem;
-    border-radius: 1rem;
+    border-radius: .6rem;
 }
 
 .full-width {
@@ -13,8 +13,8 @@ h1, img, p {
     text-align: center;
 }
 
-img {
-    height: 12rem;
+img { 
+    height: 10rem;
 }
 
 .status-prioridade {
