@@ -1,6 +1,7 @@
 <div class="container">
     <h1>Listando Chamados</h1>
       <button class="mat-elevation-z8" mat-raised-button color="primary">Novo chamado</button>
+
       <mat-form-field appearance="standard">
         <mat-label>Filter</mat-label>
         <input matInput (keyup)="applyFilter($event)" placeholder="Ex. ium" #input>
@@ -11,7 +12,7 @@
         <mat-radio-button (click)="orderByStatus(1)" value="1">ANDAMENTO</mat-radio-button>
         <mat-radio-button (click)="orderByStatus(2)" value="2">ENCERRADO</mat-radio-button>
       </mat-radio-group>
-  
+
       <div class="mat-elevation-z8">
           <table mat-table [dataSource]="dataSource">
         
