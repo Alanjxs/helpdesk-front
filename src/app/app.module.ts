@@ -13,6 +13,7 @@ import { HttpClientModule } from '@angular/common/http';
 
 // Imports para componentes do Angular Material
 import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatSelectFilterModule } from 'mat-select-filter';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatCheckboxModule } from '@angular/material/checkbox';
@@ -46,6 +47,7 @@ import { ClienteListComponent } from './components/cliente/cliente-list/cliente-
 import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -75,6 +77,7 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
     HttpClientModule,
     // Angular Material
     MatFormFieldModule,
+    MatSelectFilterModule,
     MatPaginatorModule,
     MatCheckboxModule,
     MatSnackBarModule,
@@ -93,7 +96,7 @@ import { ChamadoCreateComponent } from './components/chamado/chamado-create/cham
       closeButton: true,
       progressBar: true
     }),
-    NgxMaskModule.forRoot()
+    NgxMaskModule.forRoot(),
   ],
   providers: [AuthInterceptorProvider],
   bootstrap: [AppComponent]

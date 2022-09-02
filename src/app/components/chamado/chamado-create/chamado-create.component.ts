@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
+import { MatTableDataSource } from '@angular/material/table';
 import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Chamado } from 'src/app/models/chamado';
@@ -15,6 +16,14 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
   styleUrls: ['./chamado-create.component.css']
 })
 export class ChamadoCreateComponent implements OnInit {
+
+  public variables = ['um','dois','três', 'quatro', 'cinco', 'seis'];
+  public filteredList = this.variables.slice();
+
+  ELEMENT_DATA: Chamado[] = []
+
+  displayedColumns: string[] = ['id', 'titulo', 'cliente', 'tecnico', 'dataAbertura', 'prioridade', 'status', 'acoes'];
+  dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
 
   chamado: Chamado = {
     prioridade: '',
@@ -74,6 +83,11 @@ export class ChamadoCreateComponent implements OnInit {
   validaCampos(): boolean {
     return this.prioridade.valid && this.status.valid && this.titulo.valid && 
            this.observacoes.valid && this.tecnico && this.cliente.valid
+  }
+
+  applyFilter(event: Event) {
+    const filterValue = (event.target as HTMLInputElement).value;
+    this.dataSource.filter = filterValue.trim().toLowerCase();
   }
 
 }
