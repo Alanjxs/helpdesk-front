@@ -58,8 +58,8 @@
       <!-- Não funcionou como eu esperava 
       <div class="teste">
         <mat-form-field>
-          <mat-select placeholder="Custom placeholder">
-            <mat-select-filter [placeholder]="'I\'m a input placeholder'" [array]="variables" (filteredReturn)="filteredList =$event"></mat-select-filter>
+          <mat-select placeholder="Técnico">
+            <mat-select-filter [placeholder]="'Digite o nome do Técnico'" [array]="variables" (filteredReturn)="filteredList =$event"></mat-select-filter>
             <mat-option *ngFor="let item of filteredList" [value]="item">
               {{item}}
             </mat-option>

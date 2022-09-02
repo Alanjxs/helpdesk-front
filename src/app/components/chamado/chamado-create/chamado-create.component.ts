@@ -17,8 +17,7 @@ import { TecnicoService } from 'src/app/services/tecnico.service';
 })
 export class ChamadoCreateComponent implements OnInit {
 
-  public variables = ['um','dois','três', 'quatro', 'cinco', 'seis'];
-  public filteredList = this.variables.slice();
+
 
   ELEMENT_DATA: Chamado[] = []
 
@@ -45,6 +44,10 @@ export class ChamadoCreateComponent implements OnInit {
   observacoes: FormControl = new FormControl(null, [Validators.required])
   tecnico: FormControl = new FormControl(null, [Validators.required])
   cliente: FormControl = new FormControl(null, [Validators.required])
+
+
+  //public variables = ['Tec 1'];
+  //public filteredList = this.variables.slice();
 
   constructor(
     private chamadoService: ChamadoService,
