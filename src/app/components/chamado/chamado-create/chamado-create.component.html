@@ -49,7 +49,7 @@
               [formControl]="tecnico" 
               required>
               <mat-form-field class="full-width" appearance="outline">
-                <input matInput (keyup)="applyFilter($event)" placeholder="Digite o nome do Técnico" #input>
+                <input matInput (onchange)="applyFilter($event)" placeholder="Digite o nome do Técnico" #input>
               </mat-form-field>
               <mat-option *ngFor="let tec of tecnicos" value="{{ tec.id }}">{{ tec.nome }}</mat-option>
             </mat-select>
